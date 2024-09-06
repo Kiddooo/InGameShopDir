@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "ingameshopdir",
+  "version": "1.0",
+  "name": "InGameShopDir",
+  "description": "An In-Game Shop Directory For NearVanilla",
+  "authors": [
+    "Kiddooo"
+  ],
+  "contact": {
+    "Github": "https://github.com/kiddooo"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/ingameshopdir/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.kiddo.ingameshopdir.client.InGameShopDir"
+    ],
+    "main": [
+      "dev.kiddo.ingameshopdir.Ingameshopdir"
+    ]
+  },
+  "mixins": [
+    "ingameshopdir.mixins.json",
+    {
+      "config": "ingameshopdir.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
