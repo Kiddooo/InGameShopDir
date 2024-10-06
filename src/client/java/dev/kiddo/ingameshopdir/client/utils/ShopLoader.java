@@ -29,20 +29,21 @@ public class ShopLoader {
     }
 
     public static List<ShopItem> findAllShopsWithItem(String shopItem) {
-        String lowerCaseInput = shopItem.trim().toLowerCase().replace(" ", "_");
+        String lowerCaseInput = shopItem.trim().toLowerCase();
         List<ShopItem> matchingShops = new ArrayList<>();
 
         for (Map.Entry<String, ShopItem> entry : shopItems.entrySet()) {
-            if (entry.getValue().getInventory().contains(lowerCaseInput)) {
-                matchingShops.add(entry.getValue());
+            String[] inventoryArray = entry.getValue().getInventory().split(",");
+
+            for (String item : inventoryArray) {
+                if (item.trim().toLowerCase().equals(lowerCaseInput)) {
+                    matchingShops.add(entry.getValue());
+                    break;
+                }
             }
         }
 
-        if (!matchingShops.isEmpty()) {
-            return matchingShops;
-        } else {
-            return null;
-        }
+        return matchingShops.isEmpty() ? null : matchingShops;
     }
 
     public void loadCSV(String filePath) {
