@@ -19,6 +19,7 @@ Some item types are not searchable via the command, including:
   - **Enchanted Books**  
   - **Potions**  
   - **Entities**
+  - **Miniblocks**
 
 ---
 
