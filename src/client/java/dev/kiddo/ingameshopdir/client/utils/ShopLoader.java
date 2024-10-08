@@ -79,7 +79,7 @@ public class ShopLoader {
         item.setInventory(record.fields()[1].replaceAll("\\s+", " ").toLowerCase());
         item.setOwnerIGN(record.fields()[2]);
         item.setCoords(record.fields()[3]);
-        item.setSpawn(Double.parseDouble(record.fields()[4]));
+        item.setSpawn(record.fields()[4]);
 
         return item;
     }

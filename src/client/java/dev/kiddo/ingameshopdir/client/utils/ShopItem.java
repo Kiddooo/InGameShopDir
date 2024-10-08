@@ -10,6 +10,6 @@ public class ShopItem {
     private String inventory;
     private String coords;
     private String ownerIGN;
-    private double spawn;
+    private String spawn;
 
 }
